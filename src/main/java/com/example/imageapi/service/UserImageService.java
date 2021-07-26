@@ -48,7 +48,7 @@ public class UserImageService {
     userImage.setLabel(imageLabel);
 
     if (detectObjects) {
-      List<UserImageObject> userImageObjects = getImageObjects(userImage);
+      List<UserImageObject> userImageObjects = addImageObjects(userImage);
       userImage.setUserImageObjects(userImageObjects);
     }
 
@@ -57,7 +57,7 @@ public class UserImageService {
     return userImage;
   }
 
-  private List<UserImageObject> getImageObjects(UserImage userImage) {
+  private List<UserImageObject> addImageObjects(UserImage userImage) {
     final Optional<ImaggaTagsResponse> response = imaggaService.getTags(userImage.getImageUrl());
 
     final List<UserImageObject> userImageObjects = new ArrayList<>();
