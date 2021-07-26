@@ -7,7 +7,6 @@ import com.example.imageapi.persistence.repository.UserImageRepository;
 import com.github.javafaker.Faker;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,12 +22,6 @@ public class UserImageService {
   private final UserImageRepository userImageRepository;
 
   private final ImaggaService imaggaService;
-
-  @Value("${client.apikey.imagga}")
-  private String apiKey;
-
-  @Value("${client.apisecret.imagga}")
-  private String apiSecret;
 
   public UserImageService(UserImageRepository userImageRepository, ImaggaService imaggaService) {
     this.userImageRepository = userImageRepository;
